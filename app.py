@@ -6,7 +6,7 @@ Enter:
 - 'l' to list all books
 - 'r' to mark a book as read
 - 'd to delete a book'
-- 'q' to quit#
+- 'q' to quit
 
 Your choice: """
 
