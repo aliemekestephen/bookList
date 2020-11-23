@@ -19,6 +19,7 @@ Your choice: """
 #}
 
 def menu():  # function to select the active function to run
+    database.create_book_table()
     user_input = input(USER_CHOICE)
     while user_input != 'q':
         if user_input == 'a':  # from this point
@@ -51,17 +52,20 @@ def prompt_add_book():
 # def list_book()  show all the books in our list
 def list_book():
     books = database.get_all_books()
-    for book in books:
-        read = 'YES' if book['read'] else 'NO'
-        print(f"{book['name']} by {book['author']}, read: {read}")
+    if not books:  # if the file is empty
+        print(f'No books stored')
+    else:
+        for book in books:
+            read = 'YES' if book['read'] == '1' else 'NO'
+            print(f"{book['name']} by {book['author']}, read: {read}")
 
 
 # def prompt_read_book()   ask for book name and change it to 'read' in our list
 def prompt_read_book():
     name = input('Please enter name of book you just finished reading: ')
-    authur = input('Please enter authur of book you just finished reading: ')
+    author = input('Please enter author of book you just finished reading: ')
 
-    database.mark_book_as_read(name, authur)
+    database.mark_book_as_read(name, author)
 
 
 # def prompt_delete_book()   ask for book name and remove book from list
@@ -69,7 +73,6 @@ def delete_book():
     name = input('Please enter name of book to delete: ')
 
     database.delete_book(name)
-
 
 
 menu()
