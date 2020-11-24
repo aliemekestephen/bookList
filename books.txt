@@ -1,2 +1,0 @@
-Second Book,BBB,0
-First Book,AAA,0
