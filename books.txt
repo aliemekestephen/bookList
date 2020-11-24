@@ -1,4 +1,2 @@
-First Book,AAA,1
-Second Book,BBB,1
-Third Book,CCC,1
-Fourth Book,DDD,0
+Second Book,BBB,0
+First Book,AAA,0

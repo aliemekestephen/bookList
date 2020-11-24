@@ -8,6 +8,7 @@ Enter:
 - 'd to delete a book'
 - 'q' to quit
 
+
 Your choice: """
 
 # dictionary to store the user options first class function
@@ -56,23 +57,22 @@ def list_book():
         print(f'No books stored')
     else:
         for book in books:
-            read = 'YES' if book['read'] == '1' else 'NO'
+            read = 'YES' if book['read'] else 'NO'
             print(f"{book['name']} by {book['author']}, read: {read}")
 
 
 # def prompt_read_book()   ask for book name and change it to 'read' in our list
 def prompt_read_book():
     name = input('Please enter name of book you just finished reading: ')
-    author = input('Please enter author of book you just finished reading: ')
 
-    database.mark_book_as_read(name, author)
+    database.mark_book_as_read(name,)
 
 
 # def prompt_delete_book()   ask for book name and remove book from list
 def delete_book():
     name = input('Please enter name of book to delete: ')
 
-    database.delete_book(name)
+    database.delete_book(name,)
 
 
 menu()
